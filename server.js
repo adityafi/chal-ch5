@@ -23,93 +23,95 @@
 // });
 
 const express = require("express");
-const { getUsers } = require("./helper");
-
 const server = express();
-
-server.set("view engine", "ejs");
-server.set("views", "public");
-
+const { getUsers } = require("./helper");
+const usersRouter = require("./users");
+const morgan = require("morgan");
 server.use(express.json());
+server.use(express.urlencoded({ extended: true }));
 server.use("/static", express.static("public/static"));
+server.use(morgan("dev"));
+server.set("view engine", "ejs");
 
-server.get("/", function (require, response) {
-  // res.sendFile(`public/chapter3.html`, { root: __dirname });
-  response.render(`index.ejs`, {
-    headerText: "PLAY TRADITIONAL GAME",
-    headerSubText: "Experience new traditional game play",
-  });
-});
+server.set("views", "public");
+server.use(usersRouter);
+// server.get("/", function (require, response) {
+//   // res.sendFile(`public/chapter3.html`, { root: __dirname });
+//   response.render(`index.ejs`, {
+//     headerText: "PLAY TRADITIONAL GAME",
+//     headerSubText: "Experience new traditional game play",
+//   });
+// });
 
-server.get("/game", function (require, response) {
-  response.sendFile(`public/game.html`, { root: __dirname });
-});
+// server.get("/game", function (require, response) {
+//   response.sendFile(`public/game.html`, { root: __dirname });
+// });
 
-server.get("/test", function (require, response) {
-  const { name } = require.query;
-  const users = getUsers();
+// server.get("/test", function (require, response) {
+//   const { name } = require.query;
+//   const users = getUsers();
 
-  const result = users.map(function (user) {
-    return {
-      username: user.username,
-    };
-  });
+//   const result = users.map(function (user) {
+//     return {
+//       username: user.username,
+//     };
+//   });
 
-  response.render("test.ejs", {
-    name,
-    lain: "non abstrak",
-    users: result,
-  });
-  // res.sendFile(`public/test.html`, { root: __dirname });
-  // res.send(`
-  //     <html>
-  //         <body>
-  //             <h1>Hello, ${name}</h1>
-  //         </body>
-  //     </html>
-  // `);
-});
+//   response.render("test.ejs", {
+//     name,
+//     lain: "non abstrak",
+//     users: result,
+//   });
+//   // res.sendFile(`public/test.html`, { root: __dirname });
+//   // res.send(`
+//   //     <html>
+//   //         <body>
+//   //             <h1>Hello, ${name}</h1>
+//   //         </body>
+//   //     </html>
+//   // `);
+// });
 
-server.get("/api/v1/accounts", function (require, response) {
-  const users = getUsers();
+// server.get("/api/v1/accounts", function (require, response) {
+//   const users = getUsers();
 
-  const result = users.map(function (user) {
-    return {
-      username: user.username,
-    };
-  });
+//   const result = users.map(function (user) {
+//     return {
+//       username: user.username,
+//     };
+//   });
 
-  response.json(result);
-});
+//   response.json(result);
+// });
 
-server.post("/api/v1/accounts/login", function (require, response) {
-  const { username, password } = require.body;
+// server.post("/api/v1/accounts/login", function (require, response) {
+//   const { username, password } = require.body;
 
-  const users = getUsers();
+//   const users = getUsers();
 
-  const found = users.find(function (user) {
-    return user.username === username;
-  });
+//   const found = users.find(function (user) {
+//     return user.username === username;
+//   });
 
-  if (found) {
-    const passwordMatch = found.password === password;
+//   if (found) {
+//     const passwordMatch = found.password === password;
 
-    if (!passwordMatch) {
-      response.status(400);
-      response.json({
-        error: "password or user is wrong",
-      });
-    } else {
-      response.json({
-        id: found.id,
-      });
-    }
-  } else {
-    response.status(400);
-    response.json({
-      error: "password or user is wrong",
-    });
-  }
-});
+//     if (!passwordMatch) {
+//       response.status(400);
+//       response.json({
+//         error: "password or user is wrong",
+//       });
+//     } else {
+//       response.json({
+//         id: found.id,
+//       });
+//     }
+//   } else {
+//     response.status(400);
+//     response.json({
+//       error: "password or user is wrong",
+//     });
+//   }
+// });
 
 server.listen(4000);

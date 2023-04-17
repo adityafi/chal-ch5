@@ -11,7 +11,7 @@ usersRouter.get("/game", (require, response) => {
 
 usersRouter.get("/api/v1/users", (require, response) => {
   const data = getUsers();
-  const users = data.map((uses) => {
+  const users = data.map((user) => {
     return {
       nama: user.nama,
       umur: user.umur,
@@ -25,4 +25,4 @@ usersRouter.post("/api/v1/users", (require, response) => {
   addUsers(require.body);
 });
 
-module.exports = userRouter;
+module.exports = usersRouter;

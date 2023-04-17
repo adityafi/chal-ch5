@@ -1,12 +1,12 @@
 const fs = require("fs");
 
-function getUsers() {
-  const usersStr = fs.readFileSync("./users.json", "utf-8");
+const getUsers = () => {
+  const usersStr = fs.readFileSync("./users.json");
 
   const users = JSON.parse(usersStr);
 
   return users;
-}
+};
 
 const savedUsers = (users) => {
   fs.writeFileSync("./users.json", JSON.stringify(users));

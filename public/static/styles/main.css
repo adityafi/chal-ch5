@@ -1,0 +1,241 @@
+#header {
+  background-image: url("../images/main-bg.jpg");
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0px 0px 100px 50px rgba(0, 0, 0, 0.7) inset;
+  height: 100vh;
+}
+
+/* #main-title {
+  height: 100vh;
+} */
+
+.bg-overlay1 {
+  background-color: rgba(0, 0, 0, 0.7);
+  /* oppacity 70% */
+}
+
+.bg-overlay2 {
+  background-color: rgba(0, 0, 0, 1);
+  /* oppacity 70% */
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 50px;
+  letter-spacing: 5px;
+  font-weight: bold;
+  right: auto;
+}
+
+h2 {
+  font-size: 20px;
+  letter-spacing: 5px;
+  margin-top: 25px;
+}
+
+#playnow {
+  font-weight: bold;
+  position: relative;
+  top: 10px;
+  bottom: 0;
+  padding: 10px 100px;
+}
+
+.navbar-nav > li {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#gallery {
+  background-image: url("../images/the-games-bg.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  box-shadow: 0px 0px 100px 50px rgba(0, 0, 0, 0.7) inset;
+  display: flex;
+  align-items: center;
+}
+
+.carousel-control-prev-icon {
+  background-image: url("../images/switch-left.svg");
+}
+
+.carousel-control-next-icon {
+  background-image: url("../images/switch-right.svg");
+}
+
+.twitch {
+  background-image: url("../images/twitch.svg");
+}
+
+.carousel-control-prev {
+  left: -70px;
+}
+
+.carousel-control-next {
+  right: -70px;
+}
+
+#features {
+  background-image: url("../images/features.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  box-shadow: 0px 0px 100px 50px rgba(0, 0, 0, 0.7) inset;
+  display: flex;
+  align-items: center;
+}
+
+.game-list {
+  list-style-type: none;
+}
+
+.game-list:before {
+  content: "";
+  background: white;
+  width: 2px;
+  height: 150px;
+  position: absolute;
+  left: 775px;
+}
+
+.game-item > h5 {
+  color: #ffb548;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.game-item > p {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.game-item.active:before {
+  content: "";
+  background-image: url("../images/ellipse.svg");
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 767px;
+}
+
+.game-item.inactive:before {
+  content: "";
+  background-image: url("../images/ellipse-outline.svg");
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 767px;
+}
+
+#requirements {
+  background-image: url("../images/requirements.png");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  box-shadow: 0px 0px 100px 50px rgba(0, 0, 0, 0.7) inset;
+  display: flex;
+  align-items: center;
+}
+
+table h5 {
+  color: #ffb548;
+}
+
+#top-score {
+  background-image: url("../images/top-score-bg.png");
+  background-size: cover;
+  height: 100vh;
+  box-shadow: 0px 0px 100px 50px rgba(0, 0, 0, 0.7) inset;
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  border-radius: 50%;
+  display: inline-block;
+  width: 50px;
+  margin-right: 10px;
+  box-shadow: 5px 5px 5px #ffb548;
+}
+
+.card {
+  background-color: #2d2a2a;
+  border-radius: 0.75rem;
+}
+
+.card-title {
+  color: #ffb548;
+}
+
+.card-body h5,
+.card-body h6 {
+  display: inline;
+}
+
+.card-body h6 {
+  position: relative;
+  top: 25px;
+  left: -95px;
+}
+
+.card-twitter {
+  background-image: url("../images/twitter-card.png");
+  background-color: #eee;
+  height: 20px;
+  width: 20px;
+}
+
+@media (min-width: 786px) {
+  .card-middle {
+    position: relative;
+    left: -75px;
+  }
+}
+
+#newsletter {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-image: url("../images/newsletter.png");
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  box-shadow: 0px 0px 100px 50px rgba(0, 0, 0, 0.7) inset;
+}
+
+#newsletter-bg {
+  width: 50%;
+  max-height: 80vh;
+}
+
+#newsletter-bg > img {
+  box-shadow: 0px 0px 100px 50px rgba(0, 0, 0, 0.8) inset;
+}
+
+#newsletter-text {
+  z-index: 1;
+  width: 50%;
+}
+
+#newsletter-text h1,
+#newsletter-text p {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+  #newsletter-text {
+    position: relative;
+    left: -25%;
+  }
+}
+
+.form-binar {
+  color: #ffb548;
+  font-weight: 600;
+  background-color: #3f3f3f !important;
+  border: 1px solid #3f3f3f;
+}

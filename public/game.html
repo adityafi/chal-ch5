@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+    />
+
+    <!-- css -->
+    <link rel="stylesheet" href="static/styles/style.css" />
+
+    <title>Challange 4</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="container-fluid">
+        <div
+          class="d-flex flex-column flex-md-row align-items-center pb-3 my-4"
+        >
+          <a
+            href="/"
+            class="d-flex align-items-center link-body-emphasis text-decoration-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="0"
+              height="32"
+              class="me-2"
+              viewBox="0 0 118 94"
+              role="img"
+            >
+              <title>Rock Paper Scissors</title>
+              <span class="fs-1 fw-bold" style="color: #724c21"><</span>
+              <img
+                width="50"
+                class="px-1"
+                src="static/assets/logo.png"
+                alt=""
+              />
+              <span class="fs-1 fw-bold" style="color: #f9b23d">
+                ROCK PAPER SCISSORS
+              </span>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center playing-box">
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm border-primary">
+              <div class="card-header py-3 text-bg-primary border-primary">
+                <h4 class="my-0 fw-normal">PLAYER</h4>
+                <h4 class="my-0 fw-normal text-info bg-dark">
+                  SCORE =
+                  <div id="left" class="playerscore">0</div>
+                </h4>
+              </div>
+              <div id="player1" class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>
+                    <button
+                      class="choice choice-batu btn btn-light"
+                      type="button"
+                      data-choice="batu"
+                    >
+                      <img class="batu" src="static/assets/batu.png" alt="" />
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      class="choice choice-kertas btn btn-light"
+                      data-choice="kertas"
+                    >
+                      <img
+                        class="kertas rps"
+                        src="static/assets/kertas.png"
+                        alt=""
+                      />
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      class="choice choice-gunting btn btn-light"
+                      data-choice="gunting"
+                    >
+                      <img
+                        class="gunting"
+                        src="static/assets/gunting.png"
+                        alt=""
+                      />
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col align-self-end">
+            <div id="result">
+              <div id="vs">
+                <p>VS</p>
+              </div>
+              <div id="computer-wins" class="box">Computer Wins</div>
+              <div id="user-wins" class="box">Player 1 Wins</div>
+              <div id="draw" class="box">Draw</div>
+            </div>
+            <button id="restart">
+              <img
+                type="button"
+                src="static/assets/refresh.png"
+                class="refresh"
+                alt=""
+              />
+            </button>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm border-warning">
+              <div class="card-header py-3 text-bg-warning border-warning">
+                <h4 class="my-0 fw-normal">COMPUTER</h4>
+                <h4 class="my-0 fw-normal text-warning bg-dark">
+                  SCORE =
+                  <div id="right" class="comscore">0</div>
+                </h4>
+              </div>
+              <div id="com" class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>
+                    <button class="choice choice-batu btn" data-choice="batu">
+                      <img class="batu" src="static/assets/batu.png" alt="" />
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      class="choice choice-kertas btn"
+                      type="button"
+                      data-choice="kertas"
+                    >
+                      <img
+                        class="kertas"
+                        src="static/assets/kertas.png"
+                        alt=""
+                      />
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      class="choice choice-gunting btn"
+                      type="button"
+                      data-choice="gunting"
+                    >
+                      <img
+                        class="gunting"
+                        src="static/assets/gunting.png"
+                        alt=""
+                      />
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- javascript -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/static/scripts/main.js"></script>
+  </body>
+</html>

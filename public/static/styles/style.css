@@ -1,0 +1,61 @@
+body {
+  background-color: #9c835f;
+}
+
+img.batu {
+  width: 128px;
+  height: 110px;
+}
+
+img.kertas {
+  width: 115px;
+  height: 150px;
+}
+
+img.gunting {
+  width: 134px;
+  height: 160px;
+}
+
+img.refresh {
+  width: 150px;
+  height: 135px;
+}
+
+.choice.active {
+  background-color: #d2d2d2;
+  border-radius: 20px;
+  opacity: 0.7;
+}
+
+.playing-box {
+  text-transform: uppercase;
+}
+
+.playing-box button {
+  background-color: transparent;
+  border: none;
+}
+
+#result p {
+  color: #bd0000;
+  font-weight: 700;
+  font-size: 144px;
+  margin-bottom: 15%;
+}
+
+#result .box {
+  background-color: #006810;
+  color: #fff;
+  font-size: 70px;
+  font-weight: 700;
+  margin-bottom: 30%;
+  display: none;
+}
+
+#left {
+  display: inline-block;
+}
+#right {
+  display: inline-block;
+}

@@ -1,0 +1,13 @@
+{
+  "name": "adityaf",
+  "version": "1.0.0",
+  "description": "binar",
+  "main": "index.ejs",
+  "author": "adityafi <adityaihsani@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22"
+  }
+}

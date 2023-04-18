@@ -1,5 +1,5 @@
 const usersRouter = require("express").Router();
-const { getUsers, addUsers } = require("./users");
+const { getUsers, addUsers } = require("./helper");
 
 usersRouter.get("/", (require, response) => {
   response.render("index");

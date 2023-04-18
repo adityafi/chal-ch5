@@ -28,7 +28,7 @@ const { getUsers } = require("./helper");
 const usersRouter = require("./users");
 const morgan = require("morgan");
 server.use(express.json());
-server.use(express.urlencoded({ extended: true }));
+// server.use(express.urlencoded({ extended: true }));
 server.use("/static", express.static("public/static"));
 server.use(morgan("dev"));
 server.set("view engine", "ejs");

@@ -12,12 +12,13 @@ const savedUsers = (users) => {
   fs.writeFileSync("./users.json", JSON.stringify(users));
 };
 
-const addUsers = (user) => {
-  const users = getUsers();
-  users.push(user);
+const addUsers = (users) => {
+  const user = getUsers();
+  user.push(users);
   savedUsers(users);
 };
 module.exports = {
   getUsers,
+  savedUsers,
   addUsers,
 };
